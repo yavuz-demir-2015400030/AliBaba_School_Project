@@ -46,11 +46,13 @@ void MiddleEarth::addUndirectedEdge(int u, int v, int w)
 }
 
 
-void MiddleEarth::shortestPath(int start_node)
+string MiddleEarth::shortestPath(int start_node)
 {
     priority_queue< AliBaba > pq;
     // initialize start_node
     AliBaba temp(0,0);
+
+    string final;
 
     pq.push(temp);
 
@@ -91,9 +93,10 @@ void MiddleEarth::shortestPath(int start_node)
         if(temp.loc == V-1) {
 
             for(int i =0; i<temp.path.size(); i++){
-                cout<< temp.path[i] + 1 << " ";
+                final += to_string(temp.path[i] + 1) ;
+                final += " ";
             }
-            cout<<temp.loc +1;
+            final += to_string(temp.loc +1);
             isFinised = true;
             break;
         }
@@ -162,6 +165,8 @@ void MiddleEarth::shortestPath(int start_node)
     }
 
     if(!isFinised){
-        cout<< -1 << endl;
+        final = to_string(-1) ;
     }
+    return final;
+
 }

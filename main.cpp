@@ -4,22 +4,20 @@
 
 using namespace std;
 
-int main() {
+int main(int argc, char* argv[]) {
 
-//    if (argc != 3) {
-//        cout << "Run the code with the following command: ./project1 [input_file] [output_file]" << endl;
-//        return 1;
-//    }
-//
-//    cout << "input file: " << argv[1] << endl;
-//    cout << "output file: " << argv[2] << endl;
-//
-//    ifstream input(argv[1]);
-//
-//    ofstream output;
-//    output.open(argv[2]);
-//
-    ifstream input("C:\\Users\\Yavuz\\CLionProjects\\project3-yavuz-demir-2015400030-master\\input");
+    if (argc != 3) {
+        cout << "Run the code with the following command: ./project1 [input_file] [output_file]" << endl;
+        return 1;
+    }
+
+    cout << "input file: " << argv[1] << endl;
+    cout << "output file: " << argv[2] << endl;
+
+    ifstream input(argv[1]);
+
+    ofstream output;
+    output.open(argv[2]);
 
 
     int numOfTowns, numOfRoads, numOfThieves, numOfJewelers;
@@ -57,7 +55,7 @@ int main() {
 
     }
 
-    myEarth.shortestPath(0);
+    output << myEarth.shortestPath(0);
 
 
 
