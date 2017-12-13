@@ -20,7 +20,7 @@ MiddleEarth::MiddleEarth(int V, int T, int R)
     this->V = V;
     adj = new list<iPair>[V];
     jewelers = new list<int>[V];
-    thieves = new list<iPair>[R];
+    thieves = new list<iPair>[V];
     visited = new list<int>[V];
 
 }
